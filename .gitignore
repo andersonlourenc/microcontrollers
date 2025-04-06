@@ -1,4 +1,8 @@
-secrets.h
-.vscode/
 .pio/
-lib/
+.vscode/
+*.elf
+*.bin
+*.hex
+*.map
+*.pyc
+secrets.h
