@@ -9,28 +9,19 @@
 #define RELE 23
 
 
-#define SSID ""
-#define PASSWORD ""
 
-/
-#define BOTTOKEN ""
-
-
-#define CHATID ""
-
-// global
 WiFiClientSecure client;
 UniversalTelegramBot bot(BOTTOKEN, client);
 
-// delay
+
 #define DELAY 1000
 unsigned long lastTimeBotRan;
 
-// put function declarations here:
+
 void handleNewMessages(int);
 
 void setup() {
-  // put your setup code here, to run once:
+
 
   Serial.begin(9600);
 
