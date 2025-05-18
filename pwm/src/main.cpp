@@ -1,42 +1,40 @@
 #include <Arduino.h>
 
+#define RED 12
+#define GREEN 27
+#define BLUE 25
 
-const int redPin = 21;  
-const int greenPin = 22;  
-const int bluePin = 23;  
-
-const int freq = 5000;
-const int resolution = 8;
 
 
 void setup() {
 
-  pinMode(redPin, OUTPUT);
-  pinMode(bluePin, OUTPUT);
-  pinMode(bluePin, OUTPUT);
-
-}
-
-void loop(){
-  analogWrite(redPin, 234);
-  analogWrite(greenPin, 234);
-  analogWrite(bluePin, 50);
-
-
-  for(int brightness = 0; brightness <= 255; brightness++){   
-
-    analogWrite(redPin, brightness);
-    analogWrite(greenPin, (brightness * 234) / 255);
-    analogWrite(greenPin, (brightness * 234) / 255);
-    delay(15);
-  }
-
-
-  for(int brightness = 255; brightness >= 0; brightness--){
+  Serial.begin(9600);
   
-    analogWrite(redPin, brightness);
-    analogWrite(greenPin, (brightness * 234) / 255);
-    analogWrite(greenPin, (brightness * 234) / 255);
-    delay(15);
-  }
+  pinMode(RED, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+  pinMode(BLUE, OUTPUT);
 }
+
+void loop() {
+
+  
+  // yellow
+  analogWrite(RED, 255);
+  analogWrite(GREEN, 255);
+  analogWrite(BLUE, 0);
+  delay(3000);
+
+  // purple
+  analogWrite(RED, 158);
+  analogWrite(GREEN, 10);
+  analogWrite(BLUE, 149);
+  delay(3000);
+
+  // orange
+  analogWrite(RED, 251);
+  analogWrite(GREEN, 64);
+  analogWrite(BLUE, 3);
+  delay(3000);
+}
+
+
